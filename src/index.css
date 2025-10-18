@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
 body {
-  background-image: url('/public/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  @apply bg-gray-100;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
