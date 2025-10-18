@@ -29,4 +29,4 @@ It will include multiple sections such as:
 ---
 
 ## 👨‍💻 Author
-Developed by **[Your Name]**
+Developed by Baran Buluc
