@@ -1,16 +1,32 @@
-# React + Vite
+# 🚢 Titanic Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application built with **React** and **Tailwind CSS** that explores the Titanic dataset.  
+The goal is to provide an interactive interface for users to enter passenger details and see survival predictions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Overview
+This project combines modern web development with data analysis concepts.  
+It will include multiple sections such as:
+- A dynamic header with SVG background  
+- An introductory information section  
+- A user input form for data collection  
+- Display of prediction results
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Technologies
+- React  
+- Tailwind CSS  
+- (Later) Python / FastAPI for backend  
+- (Later) Machine Learning model trained on Titanic dataset
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Project Status
+🚧 Currently under development — more features and details will be added soon.
+
+---
+
+## 👨‍💻 Author
+Developed by **[Your Name]**
