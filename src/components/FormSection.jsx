@@ -25,8 +25,8 @@ export default function FormSection() {
   };
 
   return (
-    <section className="max-w-md mx-auto my-10 bg-gray-800 rounded-2xl shadow-lg p-6 text-white">
-      <h2 className="text-2xl font-semibold text-center text-blue-400 mb-6">
+    <section className="max-w-md mx-auto my-10 bg-white rounded-2xl shadow-lg p-6 text-white">
+      <h2 className="text-2xl font-semibold text-center text-blue-800 mb-6">
         Passenger Information
       </h2>
 
@@ -35,10 +35,10 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="age"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Age:{" "}
-            <span className="text-blue-300 font-semibold">{formData.age}</span>
+            <span className="text-gray-500 font-semibold">{formData.age}</span>
           </label>
           <input
             type="range"
@@ -48,7 +48,7 @@ export default function FormSection() {
             max="100"
             value={formData.age}
             onChange={handleChange}
-            className="w-full mt-2 accent-blue-400"
+            className="w-full mt-2 accent-blue-800"
           />
         </div>
 
@@ -56,7 +56,7 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="gender"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Gender
           </label>
@@ -65,7 +65,7 @@ export default function FormSection() {
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select gender</option>
             <option value="male">Male</option>
@@ -77,7 +77,7 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="pclass"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Passenger Class
           </label>
@@ -86,7 +86,7 @@ export default function FormSection() {
             name="pclass"
             value={formData.pclass}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select class</option>
             <option value="1">1st Class</option>
@@ -99,7 +99,7 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="sibsp"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Siblings / Spouses Aboard
           </label>
@@ -111,7 +111,7 @@ export default function FormSection() {
             max="10"
             value={formData.sibsp}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
 
@@ -119,7 +119,7 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="parch"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Parents / Children Aboard
           </label>
@@ -131,7 +131,7 @@ export default function FormSection() {
             max="10"
             value={formData.parch}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
 
@@ -139,7 +139,7 @@ export default function FormSection() {
         <div>
           <label
             htmlFor="embarked"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-gray-400"
           >
             Embarkation Point
           </label>
@@ -148,7 +148,7 @@ export default function FormSection() {
             name="embarked"
             value={formData.embarked}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select port</option>
             <option value="C">Cherbourg (C)</option>
@@ -159,7 +159,7 @@ export default function FormSection() {
 
         <button
           type="submit"
-          className="flex mx-auto w-30 mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition  gap-2"
+          className="flex mx-auto w-30 mt-4 bg-blue-800 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition gap-2 hover:scale-105 hover:cursor-pointer"
         >
           Predict
           <PredictIcon />
