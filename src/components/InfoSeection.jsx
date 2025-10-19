@@ -1,6 +1,6 @@
 export default function InfoSection() {
   return (
-    <section className="text-center text-gray-500 max-w-2xl pt-12 sm:pt-24 md:pt-36 mx-auto px-4 ">
+    <section className="text-center text-gray-500 max-w-2xl pt-12 sm:pt-24 md:pt-26 mx-auto px-4 pb-4 sm:pb-8">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-blue-800">
         About the Project
       </h2>
