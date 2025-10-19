@@ -22,3 +22,47 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+venv/
+.venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment & secrets
+.env
+*.env
+
+# SQLite / local DB files
+*.db
+*.sqlite3
+
+# Coverage / test reports
+coverage/
+htmlcov/
+.pytest_cache/
+pytestdebug.log
+
+# OS-specific
+Thumbs.db

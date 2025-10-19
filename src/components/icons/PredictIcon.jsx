@@ -7,10 +7,10 @@ export default function PredictIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-trending-up-down-icon lucide-trending-up-down"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-trending-up-down-icon lucide-trending-up-down"
       >
         <path d="M14.828 14.828 21 21" />
         <path d="M21 16v5h-5" />

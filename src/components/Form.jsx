@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PredictIcon from "./icons/PredictIcon";
-export default function FormSection() {
+
+export default function FormSection2() {
   // State for all form values
   const [formData, setFormData] = useState({
     age: 30,
@@ -9,7 +10,13 @@ export default function FormSection() {
     sibsp: 0,
     parch: 0,
     embarked: "",
+    fare: 7.25,
+    name: "",
   });
+
+  const [prediction, setPrediction] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   // Handle change for all inputs
   const handleChange = (e) => {
@@ -18,10 +25,43 @@ export default function FormSection() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    // Later: send this data to backend (FastAPI / Flask)
+    setLoading(true);
+    setError(null);
+    setPrediction(null);
+
+    try {
+      const response = await fetch("http://localhost:8000/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pclass: formData.pclass,
+          gender: formData.gender,
+          age: formData.age,
+          sibsp: parseInt(formData.sibsp),
+          parch: parseInt(formData.parch),
+          fare: parseFloat(formData.fare),
+          embarked: formData.embarked,
+          name: formData.name || "Unknown",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Prediction failed");
+      }
+
+      const data = await response.json();
+      setPrediction(data);
+      console.log("Prediction:", data);
+    } catch (err) {
+      setError(err.message);
+      console.error("Error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -31,6 +71,25 @@ export default function FormSection() {
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Name */}
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-400"
+          >
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="e.g., John Doe"
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+
         {/* Age - Range Slider */}
         <div>
           <label
@@ -65,6 +124,7 @@ export default function FormSection() {
             name="gender"
             value={formData.gender}
             onChange={handleChange}
+            required
             className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select gender</option>
@@ -86,6 +146,7 @@ export default function FormSection() {
             name="pclass"
             value={formData.pclass}
             onChange={handleChange}
+            required
             className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select class</option>
@@ -93,6 +154,27 @@ export default function FormSection() {
             <option value="2">2nd Class</option>
             <option value="3">3rd Class</option>
           </select>
+        </div>
+
+        {/* Fare */}
+        <div>
+          <label
+            htmlFor="fare"
+            className="block text-sm font-medium text-gray-400"
+          >
+            Fare ($)
+          </label>
+          <input
+            type="number"
+            id="fare"
+            name="fare"
+            min="0"
+            step="0.01"
+            value={formData.fare}
+            onChange={handleChange}
+            required
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
         </div>
 
         {/* Siblings/Spouses Aboard */}
@@ -111,7 +193,7 @@ export default function FormSection() {
             max="10"
             value={formData.sibsp}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
 
@@ -131,7 +213,7 @@ export default function FormSection() {
             max="10"
             value={formData.parch}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
 
@@ -148,7 +230,8 @@ export default function FormSection() {
             name="embarked"
             value={formData.embarked}
             onChange={handleChange}
-            className="w-full mt-1 p-2 rounded-md text-gray-500  border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            required
+            className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           >
             <option value="">Select port</option>
             <option value="C">Cherbourg (C)</option>
@@ -157,11 +240,40 @@ export default function FormSection() {
           </select>
         </div>
 
+        {/* Error Message */}
+        {error && (
+          <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-sm">
+            {error}
+          </div>
+        )}
+
+        {/* Prediction Result */}
+        {prediction && (
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-md">
+            <h3 className="font-semibold text-blue-800 mb-2">
+              Prediction Result:
+            </h3>
+            <p className="text-gray-700">
+              <strong>Status:</strong>{" "}
+              {prediction.survived === 1 ? "✅ Would Survive" : "❌ Would Not Survive"}
+            </p>
+            <p className="text-gray-700">
+              <strong>Survival Probability:</strong>{" "}
+              {(prediction.survival_probability * 100).toFixed(1)}%
+            </p>
+            <p className="text-gray-700">
+              <strong>Death Probability:</strong>{" "}
+              {(prediction.death_probability * 100).toFixed(1)}%
+            </p>
+          </div>
+        )}
+
         <button
           type="submit"
-          className="flex mx-auto w-30 mt-4 bg-blue-800 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition gap-2 hover:scale-105 hover:cursor-pointer"
+          disabled={loading}
+          className="flex mx-auto w-30 mt-4 bg-blue-800 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition gap-2 hover:scale-105 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Predict
+          {loading ? "Predicting..." : "Predict"}
           <PredictIcon />
         </button>
       </form>

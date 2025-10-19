@@ -1,0 +1,35 @@
+Start the Server Again:
+Option 1: If virtual environment is still activated
+powershellpython app.py
+Option 2: If you closed the terminal (need to activate venv again)
+powershell# Navigate to backend folder
+cd backend
+
+# Activate virtual environment
+.\venv\Scripts\Activate.ps1
+
+# Run server
+python app.py
+Virtual Environment Commands:
+Activate:
+powershell# PowerShell
+.\venv\Scripts\Activate.ps1
+
+# Or Command Prompt (cmd)
+venv\Scripts\activate
+Deactivate:
+powershelldeactivate
+```
+
+### Check if venv is active:
+You'll see `(venv)` at the beginning of your terminal prompt:
+```
+(venv) PS C:\Users\Asus\Desktop\project\backend>
+Quick Start Script (Create a start.bat file):
+Create a file named start.bat in your backend folder:
+batch@echo off
+call venv\Scripts\activate
+python app.py
+Then just double-click start.bat to start the server!
+Pro Tip:
+Keep the backend terminal open while developing. When you make changes to app.py, the server will auto-reload (because reload=True is enabled). Just save the file and it restarts automatically! 🔄

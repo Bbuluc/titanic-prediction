@@ -1,5 +1,5 @@
 
-import FormSection from "./components/FormSection";
+import FormSection2 from "./components/Form";
 import MainHeader from "./components/Header";
 import InfoSection from "./components/infoSeection";
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <MainHeader />
       <InfoSection />
-      <FormSection />
+      <FormSection2/>
     </>
   );
 }
