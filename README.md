@@ -53,6 +53,15 @@ Key features include:
 
 ---
 
+## 🗂 Dataset
+
+The Titanic dataset used in this project is publicly available from [Kaggle](https://www.kaggle.com/competitions/titanic).  
+
+**Citation:**  
+Will Cukierski. *Titanic - Machine Learning from Disaster*. 2012. Kaggle. https://www.kaggle.com/competitions/titanic
+
+
+---
 ## 📈 Project Status
 
 ✅ Fully functional frontend and backend
