@@ -1,32 +1,72 @@
 # 🚢 Titanic Project
 
-A web application built with **React** and **Tailwind CSS** that explores the Titanic dataset.  
-The goal is to provide an interactive interface for users to enter passenger details and see survival predictions.
+A full-stack web application built with **React**, **Tailwind CSS**, and **FastAPI** that predicts survival on the Titanic.
+Users can input passenger details, and the app returns survival predictions using a machine learning model.
 
 ---
 
 ## 🧠 Overview
-This project combines modern web development with data analysis concepts.  
-It will include multiple sections such as:
-- A dynamic header with SVG background  
-- An introductory information section  
-- A user input form for data collection  
-- Display of prediction results
+
+This project combines **modern web development** with **data analysis** and **machine learning** concepts.
+Key features include:
+
+* Dynamic header with SVG background
+* Informational section about the project
+* Interactive form to collect passenger details:
+  * Name
+  * Age (range slider)
+  * Gender
+  * Passenger class
+  * Siblings/Spouses aboard
+  * Parents/Children aboard
+  * Embarkation point
+* Display of survival prediction results
+* Backend API powered by **FastAPI** to handle predictions
 
 ---
 
 ## ⚙️ Technologies
-- React  
-- Tailwind CSS  
-- (Later) Python / FastAPI for backend  
-- (Later) Machine Learning model trained on Titanic dataset
+
+* **Frontend:** React, Tailwind CSS
+* **Backend:** Python, FastAPI
+* **Machine Learning:** Pre-trained Titanic survival model (e.g., scikit-learn / TensorFlow)
+* **Other Tools:** Git, GitHub, VS Code
 
 ---
 
-## 🧩 Project Status
-🚧 Currently under development — more features and details will be added soon.
+## 🧩 Features
+
+* Responsive and interactive UI with Tailwind CSS
+* Safe data handling — only numerical and categorical inputs
+* Dynamic SVG headers and form components
+* Prediction results returned instantly via FastAPI
+* Clean and maintainable project structure
+
+---
+
+## 📝 Usage
+
+1. Open the app in your browser.
+2. Fill out the passenger information form.
+3. Click **Predict**.
+4. View the survival prediction result below the form.
+
+---
+
+## 📈 Project Status
+
+✅ Fully functional frontend and backend
+✅ Integrated ML model for predictions
+✅ Form validation and state management with React
 
 ---
 
 ## 👨‍💻 Author
-Developed by Baran Buluc
+
+Developed by **Baran Buluc**
+
+---
+
+## 📜 License
+
+MIT License
