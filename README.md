@@ -53,6 +53,50 @@ Key features include:
 
 ---
 
+### Installation
+
+1. **Clone the repository**
+```bash
+   git clone https://github.com/yourusername/titanic-project.git
+   cd titanic-project
+```
+
+2. **Frontend Setup**
+```bash
+   # Install dependencies
+   npm install
+   
+   # Start development server
+   npm run dev
+```
+   The frontend will run on `http://localhost:5173`
+
+3. **Backend Setup**
+```bash
+   # Navigate to backend folder
+   cd backend
+   
+   # Create virtual environment
+   python -m venv venv
+   
+   # Activate virtual environment
+   # Windows PowerShell:
+   .\venv\Scripts\Activate.ps1
+   # Windows CMD:
+   venv\Scripts\activate
+   # Mac/Linux:
+   source venv/bin/activate
+   
+   # Install dependencies
+   pip install -r requirements.txt
+   
+   # Start FastAPI server
+   python app.py
+```
+   The backend will run on `http://localhost:8000`
+
+---
+
 ## 🗂 Dataset
 
 The Titanic dataset used in this project is publicly available from [Kaggle](https://www.kaggle.com/competitions/titanic).  
