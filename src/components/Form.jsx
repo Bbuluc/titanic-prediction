@@ -86,6 +86,7 @@ export default function FormSection2() {
             value={formData.name}
             onChange={handleChange}
             placeholder="e.g., John Doe"
+            maxLength={20}
             className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
