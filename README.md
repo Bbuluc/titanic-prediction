@@ -55,13 +55,7 @@ Key features include:
 
 ### Installation
 
-1. **Clone the repository**
-```bash
-   git clone https://github.com/yourusername/titanic-project.git
-   cd titanic-project
-```
-
-2. **Frontend Setup**
+1. **Frontend Setup**
 ```bash
    # Install dependencies
    npm install
@@ -71,7 +65,7 @@ Key features include:
 ```
    The frontend will run on `http://localhost:5173`
 
-3. **Backend Setup**
+2. **Backend Setup**
 ```bash
    # Navigate to backend folder
    cd backend
