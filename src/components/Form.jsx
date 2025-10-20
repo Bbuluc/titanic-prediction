@@ -249,10 +249,11 @@ export default function FormSection2() {
 
         {/* Prediction Result */}
         {prediction && (
-          <div className="p-4 bg-blue-50 border border-blue-200 rounded-md">
+          <div className="p-4 bg-blue-100 border border-blue-800 rounded-md">
             <h3 className="font-semibold text-blue-800 mb-2">
               Prediction Result:
             </h3>
+            
             <p className="text-gray-700">
               <strong>Status:</strong>{" "}
               {prediction.survived === 1 ? "✅ Would Survive" : "❌ Would Not Survive"}
