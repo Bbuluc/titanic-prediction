@@ -1,3 +1,10 @@
+// Renders the main header section of the Titanic app.
+// Features:
+// - Centered title text
+// - SVG wave background for visual effect
+// -------------------------------------------------------------
+
+
 export default function MainHeader() {
   return (
     <header className="relative flex justify-center items-center h-20">

@@ -1,7 +1,18 @@
+// Renders the Titanic Survival Prediction form.
+// Users can input passenger details, and the form sends a POST
+// request to the FastAPI backend to get survival predictions.
+//
+// Features:
+// - Inputs: name, age, gender, class, siblings/spouses, parents/children, fare, embarkation point
+// - Range slider for age, number inputs for numeric values
+// - Handles loading, errors, and prediction results
+// - Displays prediction status and probabilities
+// -------------------------------------------------------------
+
 import { useState } from "react";
 import PredictIcon from "./icons/PredictIcon";
 
-export default function FormSection2() {
+export default function FormSection() {
   // State for all form values
   const [formData, setFormData] = useState({
     age: 30,

@@ -1,3 +1,9 @@
+// Renders the informational section of the Titanic app.
+// Features:
+// - Centered text
+// - Describes project purpose and usage
+// -------------------------------------------------------------
+
 export default function InfoSection() {
   return (
     <section className="text-center text-gray-500 max-w-2xl pt-12 sm:pt-24 md:pt-26 mx-auto px-4 pb-4 sm:pb-8">
