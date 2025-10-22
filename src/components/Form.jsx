@@ -43,7 +43,7 @@ export default function FormSection() {
     setPrediction(null);
 
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
