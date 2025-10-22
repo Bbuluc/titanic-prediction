@@ -10,7 +10,7 @@
 import Footer from "./components/Footer";
 import FormSection from "./components/Form";
 import MainHeader from "./components/Header";
-import InfoSection from "./components/infoSection";
+import InfoSection from "./components/InfoSection";
 
 function App() {
   return (
