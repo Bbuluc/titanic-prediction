@@ -67,7 +67,7 @@ export default function FormSection2() {
   return (
     <section className="max-w-md mx-auto my-10 bg-white rounded-2xl shadow-lg p-6 text-white">
       <h2 className="text-2xl font-semibold text-center text-blue-800 mb-6">
-        Passenger Information
+        Titanic Survival Predictor
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -217,7 +217,7 @@ export default function FormSection2() {
             className="w-full mt-1 p-2 rounded-md text-gray-500 border border-gray-600 focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
-
+  
         {/* Embarkation Point */}
         <div>
           <label
