@@ -20,7 +20,7 @@ app = FastAPI(
 # Enable CORS for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://titanic-prediction-seven.vercel.app/"],  # In production, replace with your React app URL
+    allow_origins=["https://titanic-prediction-seven.vercel.app"],  # In production, replace with your React app URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
