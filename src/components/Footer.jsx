@@ -7,7 +7,7 @@ export default function Footer() {
 
         {/* Copyright text displayed at the bottom center */}
         <p className="relative text-white text-xs text-center z-10">
-        &copy; 2024 Titanic Survivor Prediction. All rights reserved..
+        &copy; 2024 Titanic Survivor Prediction. All rights reserved.
         </p>
 
     </footer>
