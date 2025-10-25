@@ -42,8 +42,9 @@ export default function FormSection() {
     setError(null);
     setPrediction(null);
 
+    console.log(`${import.meta.env.VITE_API_URL}/predict`)
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/predict`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
